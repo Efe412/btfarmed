@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Başlık yazma/silme animasyonu (tarayıcı başlığını kullan)
 (async function () {
   const titleElement = document.getElementById("animatedTitle");
@@ -6,27 +5,32 @@
 
   const fullText = document.title || "BTF | Turkish Armed Forces";
 
-  titleElement.textContent = fullText.slice(0, currentLength);
+  // Yardımcı bekleme fonksiyonu
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  setInterval(() => {
-    if (typingForward) {
-      if (currentLength < fullText.length) {
-        currentLength++;
-      } else {
-        // Tamamı yazıldıysa, bir sonraki turda silmeye başlayalım
-        typingForward = false;
-      }
-    } else {
-      // Silme aşaması, en az 1 harf kalsın
-      if (currentLength > 1) {
-        currentLength--;
-      } else {
-        typingForward = true;
-      }
+  async function typeText(speedMs) {
+    titleElement.textContent = "";
+    for (let i = 1; i <= fullText.length; i++) {
+      titleElement.textContent = fullText.slice(0, i);
+      await wait(speedMs);
     }
+  }
 
-    titleElement.textContent = fullText.slice(0, currentLength);
-  }, 1000);
+  async function deleteText(speedMs) {
+    for (let i = fullText.length; i >= 0; i--) {
+      titleElement.textContent = fullText.slice(0, i);
+      await wait(speedMs);
+    }
+  }
+
+  // Sürekli döngü: yaz → 10 sn bekle → 1 ms'de sil → 0.5 sn'de tekrar yaz
+  // İlk girişte de baştan başlayarak yazma animasyonu karşılar
+  while (true) {
+    await typeText(500); // 0.5 saniye/harf
+    await wait(10000); // 10 saniye bekle
+    await deleteText(1); // 1 ms/harf sil
+    await typeText(500); // 0.5 saniye/harf tekrar yaz
+  }
 })();
 
 // Kapak animasyonu bittikten sonra sayfayı göster
@@ -61,4 +65,21 @@ document.addEventListener("dragstart", (e) => {
   e.preventDefault();
 });
 
+document.addEventListener("dragstart", (e) => {
+  e.preventDefault();
+});
+
+// Smooth scroll for navigation links
+document.querySelectorAll('.main-nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
 

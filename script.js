@@ -1,67 +1,620 @@
-// Başlık yazma/silme animasyonu (tarayıcı başlığını kullan)
-(async function () {
-  const titleElement = document.getElementById("animatedTitle");
-  if (!titleElement) return;
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="dYBGgzqa8nQaFtTUXXBdrQega3UJVVm2H02YMt-emGI" />
+  <title>BTF | Turkish Armed Forces</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Giriş Kapak Alanı -->
+  <div class="intro-overlay">
+    <div class="intro-content">
+      <img
+        src="https://images-ext-1.discordapp.net/external/10O1BsKKOugA3_yrx5SdEXfKKybgMvIYpYXrkhnTWdM/%3Fsize%3D512/https/cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?format=webp"
+        alt="BTF Logo"
+        class="intro-logo"
+      />
+      <h1 class="intro-title">BTF | Turkish Armed Forces</h1>
+    </div>
+  </div>
 
-  const fullText = document.title || "BTF | Turkish Armed Forces";
+  <div class="page-root">
+    <header class="site-header">
+      <div class="logo-area">
+        <img
+          src="https://images-ext-1.discordapp.net/external/10O1BsKKOugA3_yrx5SdEXfKKybgMvIYpYXrkhnTWdM/%3Fsize%3D512/https/cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?format=webp"
+          alt="BTF Logo"
+          class="logo-image"
+        />
+        <div class="site-title-animated" id="animatedTitle"></div>
+      </div>
+      <nav class="main-nav">
+        <a href="#lojistik">Lojistik Hakkında</a>
+        <a href="#roller">Rütbe Tanıtımları</a>
+        <a href="#hitap">Hitap Sistemi</a>
+        <a href="#terfi">Terfi Sistemi</a>
+        <a href="#puan">Puan Sistemi</a>
+      </nav>
+    </header>
 
-  // Yardımcı bekleme fonksiyonu
-  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    <main class="main-content">
+      <!-- 1. Bölüm: Lojistik Hakkında -->
+      <section id="lojistik" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI HAKKINDA</h2>
+        <p>
+          Akademi Lojistik Komutanlığı, akademi içerisindeki
+          <strong>düzeni sağlamak, personel takibini yapmak ve sistemlerin düzenli çalışmasını denetlemek</strong>
+          amacıyla kurulmuş bir birimdir.
+        </p>
+        <p>
+          Bu birim, akademi faaliyetlerinin daha düzenli ilerlemesi için
+          <strong>personel kontrolü, raporlama, denetim ve sistem düzeni</strong>
+          gibi konularla ilgilenir.
+        </p>
 
-  async function typeText(speedMs) {
-    titleElement.textContent = "";
-    for (let i = 1; i <= fullText.length; i++) {
-      titleElement.textContent = fullText.slice(0, i);
-      await wait(speedMs);
-    }
-  }
+        <div class="divider"></div>
 
-  async function deleteText(speedMs) {
-    for (let i = fullText.length; i >= 0; i--) {
-      await wait(speedMs);
-      titleElement.textContent = fullText.slice(0, i);
-    }
-  }
+        <h3>Lojistik Komutanlığının Temel Görevleri</h3>
+        <ul class="custom-list">
+          <li>Akademi personel sayımlarını yapmak</li>
+          <li>İnaktif personelleri tespit etmek</li>
+          <li>Tespit edilen personelleri yetkililere raporlamak</li>
+          <li>Akademi içerisindeki personel düzenini korumak</li>
+          <li>Haftalık icraat ve faaliyet raporları hazırlamak</li>
+          <li>Discord üzerinden genel sayımlar yapmak</li>
+          <li>Akademi içerisinde yapılan hataları tespit edip raporlamak</li>
+          <li>Öneri kanallarını inceleyerek akademi gelişimine katkı sağlamak</li>
+          <li>Akademi alımlarını denetlemek ve eksikleri raporlamak</li>
+          <li>Alım kitapçıklarını güncellemek ve yeni gelen personelleri bilgilendirmek</li>
+          <li>Akademi eğitimlerinin düzenini denetlemek</li>
+          <li>Akademi içindeki kanal ve sistem düzenini kontrol etmek</li>
+          <li>Haftalık akademi icraatlarını inceleyerek yetkililere raporlamak</li>
+        </ul>
 
-  // Sürekli döngü: yaz → 10 sn bekle → 1 ms'de sil → 0.5 sn'de tekrar yaz
-  // İlk girişte de baştan başlayarak yazma animasyonu karşılar
-  while (true) {
-    await typeText(500); // 0.5 saniye/harf
-    await wait(10000); // 10 saniye bekle
-    await deleteText(1); // 1 ms/harf sil
-    await typeText(500); // 0.5 saniye/harf tekrar yaz
-  }
-})();
+        <div class="divider"></div>
 
-// Kapak animasyonu bittikten sonra sayfayı göster
-window.addEventListener("load", () => {
-  const pageRoot = document.querySelector(".page-root");
-  if (pageRoot) {
-    // Kapak animasyonu yaklaşık 2.2s + 1.8s => 4s sürüyor, biraz pay bırakalım
-    setTimeout(() => {
-      pageRoot.classList.add("page-visible");
-    }, 2600);
-  }
-});
+        <h3>Amaç</h3>
+        <ul class="custom-list">
+          <li>Akademi düzenini korumak</li>
+          <li>Personel takibini sağlamak</li>
+          <li>Sistem hatalarını tespit etmek</li>
+          <li>Akademinin daha düzenli ve profesyonel çalışmasını sağlamak</li>
+        </ul>
+      </section>
 
-// Kopyalama, seçme, sağ tık vb. engellemeler
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+      <!-- 2. Bölüm: Rol / Rütbe Tanıtımları -->
+      <section id="roller" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Rütbe Tanıtımları</h3>
+        <p>
+          Bu bölümde Akademi Lojistik Komutanlığı bünyesinde bulunan rütbelerin görevleri ve sorumlulukları açıklanmıştır.
+        </p>
 
-document.addEventListener("copy", (e) => {
-  e.preventDefault();
-});
+        <div class="divider"></div>
 
-document.addEventListener("cut", (e) => {
-  e.preventDefault();
-});
+        <article class="rank-card">
+          <h4>Lojistik Stajyeri</h4>
+          <p>
+            Lojistik Stajyeri, birime yeni katılan personellerin bulunduğu başlangıç rütbesidir.
+            Bu rütbedeki personeller, lojistik biriminin temel görevlerini yerine getirir ve görevlerden puan toplayarak tecrübe kazanır.
+          </p>
+        </article>
 
-document.addEventListener("selectstart", (e) => {
-  e.preventDefault();
-});
+        <article class="rank-card">
+          <h4>Lojistik Personeli</h4>
+          <p>
+            Lojistik Personeli, Lojistik Stajyerinin bir üst rütbesidir.
+            Bu rütbedeki personeller stajyerler ile aynı görevleri yerine getirir ve akademi içerisindeki lojistik faaliyetlerde aktif olarak görev alır.
+          </p>
+        </article>
 
-document.addEventListener("dragstart", (e) => {
-  e.preventDefault();
-});
+        <article class="rank-card">
+          <h4>Kıdemli Lojistik Personeli</h4>
+          <p>
+            Kıdemli Lojistik Personeli, deneyimli lojistik personellerin bulunduğu rütbedir.
+            Bu rütbedeki personeller temel lojistik görevlerini yerine getirmenin yanı sıra alt rütbeleri denetler ve haftalık olarak alt rütbelerin faaliyetlerini kontrol eder.
+          </p>
+        </article>
 
+        <article class="rank-card">
+          <h4>Lojistik Denetmeni</h4>
+          <p>
+            Lojistik Denetmeni, birim içerisindeki denetim görevlerinden sorumlu rütbedir.
+            Bu rütbedeki personeller bazı lojistik görevlerini yerine getirir ve kendi altındaki rütbeleri düzenli olarak denetler. Tespit edilen hataları veya eksiklikleri yetkili kişilere rapor eder.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Akademi Lojistik Şef Yardımcısı</h4>
+          <p>
+            Akademi Lojistik Şef Yardımcısı, birim düzeninin korunmasından sorumlu olan yetkili rütbedir.
+            Bu rütbedeki personeller birim yönetiminde görev alır ve Akademi Lojistik Şefine yardımcı olur.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Akademi Lojistik Şefi</h4>
+          <p>
+            Akademi Lojistik Şefi, Akademi Lojistik Komutanlığının en üst sorumlusudur.
+            Birimin genel düzeninden sorumludur ve lojistik biriminin tüm faaliyetlerini denetler.
+          </p>
+        </article>
+      </section>
+
+      <!-- 3. Bölüm: Hitap Sistemi -->
+      <section id="hitap" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Hitap Sistemi</h3>
+        <p>
+          Bu hitap sistemi, Akademi Lojistik Komutanlığı içerisinde
+          <strong>disiplinli ve saygılı bir iletişim sağlamak amacıyla</strong> oluşturulmuştur.
+          Personeller konuşurken rütbelere uygun şekilde hitap etmekle yükümlüdür.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="hitap-grid">
+          <div class="hitap-card">
+            <h4>Genel Sorumlu</h4>
+            <p>Akademi Lojistik Komutanlığı içerisindeki en üst yetkili roldür. Tüm rütbeler bu role karşı sorumludur ve verilen talimatlar önceliklidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Genel Sorumlum</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Akademi Lojistik Şefi</h4>
+            <p>Birim içerisindeki en üst yönetici rütbesidir ve lojistik biriminin genel yönetiminden sorumludur.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Şefim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Akademi Lojistik Şef Yardımcısı</h4>
+            <p>Şefe yardımcı olan ve birim düzeninin korunmasından sorumlu rütbedir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Şef Yardımcım</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Denetmeni</h4>
+            <p>Birim içerisindeki denetim görevlerinden sorumlu rütbedir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Denetmenim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Kıdemli Lojistik Personeli</h4>
+            <p>Deneyimli personellerden oluşan rütbedir ve alt rütbeleri denetleme yetkisine sahiptir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Kıdemli Personelim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Personeli</h4>
+            <p>Lojistik görevlerini yerine getiren temel personel rütbesidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Personelim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Stajyeri</h4>
+            <p>Birime yeni katılan personellerin bulunduğu başlangıç rütbesidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Stajyer</p>
+          </div>
+        </div>
+
+        <p class="hitap-warning">
+          Herkesin uyması zorunludur; aksi takdirde gerekli cezalar uygulanır.
+        </p>
+      </section>
+
+      <!-- 4. Bölüm: Terfi Sistemi -->
+      <section id="terfi" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Terfi Sistemi</h3>
+        <p>
+          <em>Bu sistem Akademi Lojistik Komutanlığı personellerinin yaptığı görevlerden kazandığı puanlara göre terfi etmesini sağlamak amacıyla hazırlanmıştır.</em>
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="terfi-grid">
+          <div class="terfi-card">
+            <h4>Lojistik Stajyeri</h4>
+            <p>Başlangıç rütbesidir. Yeni katılan personeller bu rütbe ile başlar.</p>
+          </div>
+          <div class="terfi-card">
+            <h4>Lojistik Personeli</h4>
+            <p>Gereken Puan: <strong>45</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Kıdemli Lojistik Personeli</h4>
+            <p>Gereken Puan: <strong>100</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Lojistik Denetmeni</h4>
+            <p>Gereken Puan: <strong>150</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Akademi Lojistik Şef Yardımcısı</h4>
+            <p>Yönetim tarafından verilen yetkili rütbedir.</p>
+          </div>
+          <div class="terfi-card">
+            <h4>Akademi Lojistik Şefi</h4>
+            <p>Akademi Lojistik Komutanlığının en üst sorumlusudur.</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>Terfi Şartları</h3>
+        <ul class="custom-list">
+          <li>Gerekli puanı tamamlaması</li>
+          <li>Aktif görev yapması</li>
+          <li>Disiplin cezası almamış olması</li>
+          <li>Yetkililer tarafından uygun görülmesi</li>
+        </ul>
+      </section>
+
+      <!-- 5. Bölüm: Puan Sistemi -->
+      <section id="puan" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Görev Puan Sistemi</h3>
+        <p>
+          <em>Bu sistem Akademi Lojistik Komutanlığı personellerinin yaptığı görevleri puanlandırmak amacıyla hazırlanmıştır. Görevlerin zorluk derecesine göre puan verilir.</em>
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="puan-grid">
+          <div class="puan-card"><h4>Personel Sayımı Yapmak</h4><p>Puan: <strong>3</strong></p></div>
+          <div class="puan-card"><h4>İnaktif Personel Tespit Etmek</h4><p>Puan: <strong>4</strong></p></div>
+          <div class="puan-card"><h4>İnaktif Personelleri Raporlamak</h4><p>Puan: <strong>4</strong></p></div>
+          <div class="puan-card"><h4>Discord Genel Sayımı Yapmak</h4><p>Puan: <strong>3</strong></p></div>
+          <div class="puan-card"><h4>Akademi Personel Düzenini Denetlemek</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Akademi Eğitimlerini Denetlemek</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Akademi İç Sistem ve Kanal Kontrolleri Yapmak</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Akademi Alımlarını Denetlemek</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Alım Kitapçığı Güncellemek / Sistem Düzenlemek</h4><p>Puan: <strong>7</strong></p></div>
+          <div class="puan-card"><h4>Haftalık Akademi İcraat Raporu Hazırlamak</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Akademi Hatalarını Tespit Edip Raporlamak</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Öneri Kanallarını İncelemek ve Raporlamak</h4><p>Puan: <strong>4</strong></p></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>Günlük Aktiflik Puanı</h3>
+        <p>
+          <em>Personellerin aktifliğini ölçmek amacıyla ek puan sistemi uygulanır.</em>
+        </p>
+
+        <ul class="custom-list">
+          <li>Günlük aktif olmak (Discord / görev takibi) — Puan: <strong>2</strong></li>
+          <li>Gün içerisinde en az 1 görev yapmak — Ek Puan: <strong>+1</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>BTF | Turkish Armed Forces - Akademi Lojistik Komutanlığı</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+=======
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTF | Turkish Armed Forces</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Giriş Kapak Alanı -->
+  <div class="intro-overlay">
+    <div class="intro-content">
+      <img
+        src="https://images-ext-1.discordapp.net/external/10O1BsKKOugA3_yrx5SdEXfKKybgMvIYpYXrkhnTWdM/%3Fsize%3D512/https/cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?format=webp"
+        alt="BTF Logo"
+        class="intro-logo"
+      />
+      <h1 class="intro-title">BTF | Turkish Armed Forces</h1>
+    </div>
+  </div>
+
+  <div class="page-root">
+    <header class="site-header">
+      <div class="logo-area">
+        <img
+          src="https://images-ext-1.discordapp.net/external/10O1BsKKOugA3_yrx5SdEXfKKybgMvIYpYXrkhnTWdM/%3Fsize%3D512/https/cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?format=webp"
+          alt="BTF Logo"
+          class="logo-image"
+        />
+        <div class="site-title-animated" id="animatedTitle"></div>
+      </div>
+      <nav class="main-nav">
+        <a href="#lojistik">Lojistik Hakkında</a>
+        <a href="#roller">Rütbe Tanıtımları</a>
+        <a href="#hitap">Hitap Sistemi</a>
+        <a href="#terfi">Terfi Sistemi</a>
+        <a href="#puan">Puan Sistemi</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- 1. Bölüm: Lojistik Hakkında -->
+      <section id="lojistik" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI HAKKINDA</h2>
+        <p>
+          Akademi Lojistik Komutanlığı, akademi içerisindeki
+          <strong>düzeni sağlamak, personel takibini yapmak ve sistemlerin düzenli çalışmasını denetlemek</strong>
+          amacıyla kurulmuş bir birimdir.
+        </p>
+        <p>
+          Bu birim, akademi faaliyetlerinin daha düzenli ilerlemesi için
+          <strong>personel kontrolü, raporlama, denetim ve sistem düzeni</strong>
+          gibi konularla ilgilenir.
+        </p>
+
+        <div class="divider"></div>
+
+        <h3>Lojistik Komutanlığının Temel Görevleri</h3>
+        <ul class="custom-list">
+          <li>Akademi personel sayımlarını yapmak</li>
+          <li>İnaktif personelleri tespit etmek</li>
+          <li>Tespit edilen personelleri yetkililere raporlamak</li>
+          <li>Akademi içerisindeki personel düzenini korumak</li>
+          <li>Haftalık icraat ve faaliyet raporları hazırlamak</li>
+          <li>Discord üzerinden genel sayımlar yapmak</li>
+          <li>Akademi içerisinde yapılan hataları tespit edip raporlamak</li>
+          <li>Öneri kanallarını inceleyerek akademi gelişimine katkı sağlamak</li>
+          <li>Akademi alımlarını denetlemek ve eksikleri raporlamak</li>
+          <li>Alım kitapçıklarını güncellemek ve yeni gelen personelleri bilgilendirmek</li>
+          <li>Akademi eğitimlerinin düzenini denetlemek</li>
+          <li>Akademi içindeki kanal ve sistem düzenini kontrol etmek</li>
+          <li>Haftalık akademi icraatlarını inceleyerek yetkililere raporlamak</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h3>Amaç</h3>
+        <ul class="custom-list">
+          <li>Akademi düzenini korumak</li>
+          <li>Personel takibini sağlamak</li>
+          <li>Sistem hatalarını tespit etmek</li>
+          <li>Akademinin daha düzenli ve profesyonel çalışmasını sağlamak</li>
+        </ul>
+      </section>
+
+      <!-- 2. Bölüm: Rol / Rütbe Tanıtımları -->
+      <section id="roller" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Rütbe Tanıtımları</h3>
+        <p>
+          Bu bölümde Akademi Lojistik Komutanlığı bünyesinde bulunan rütbelerin görevleri ve sorumlulukları açıklanmıştır.
+        </p>
+
+        <div class="divider"></div>
+
+        <article class="rank-card">
+          <h4>Lojistik Stajyeri</h4>
+          <p>
+            Lojistik Stajyeri, birime yeni katılan personellerin bulunduğu başlangıç rütbesidir.
+            Bu rütbedeki personeller, lojistik biriminin temel görevlerini yerine getirir ve görevlerden puan toplayarak tecrübe kazanır.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Lojistik Personeli</h4>
+          <p>
+            Lojistik Personeli, Lojistik Stajyerinin bir üst rütbesidir.
+            Bu rütbedeki personeller stajyerler ile aynı görevleri yerine getirir ve akademi içerisindeki lojistik faaliyetlerde aktif olarak görev alır.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Kıdemli Lojistik Personeli</h4>
+          <p>
+            Kıdemli Lojistik Personeli, deneyimli lojistik personellerin bulunduğu rütbedir.
+            Bu rütbedeki personeller temel lojistik görevlerini yerine getirmenin yanı sıra alt rütbeleri denetler ve haftalık olarak alt rütbelerin faaliyetlerini kontrol eder.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Lojistik Denetmeni</h4>
+          <p>
+            Lojistik Denetmeni, birim içerisindeki denetim görevlerinden sorumlu rütbedir.
+            Bu rütbedeki personeller bazı lojistik görevlerini yerine getirir ve kendi altındaki rütbeleri düzenli olarak denetler. Tespit edilen hataları veya eksiklikleri yetkili kişilere rapor eder.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Akademi Lojistik Şef Yardımcısı</h4>
+          <p>
+            Akademi Lojistik Şef Yardımcısı, birim düzeninin korunmasından sorumlu olan yetkili rütbedir.
+            Bu rütbedeki personeller birim yönetiminde görev alır ve Akademi Lojistik Şefine yardımcı olur.
+          </p>
+        </article>
+
+        <article class="rank-card">
+          <h4>Akademi Lojistik Şefi</h4>
+          <p>
+            Akademi Lojistik Şefi, Akademi Lojistik Komutanlığının en üst sorumlusudur.
+            Birimin genel düzeninden sorumludur ve lojistik biriminin tüm faaliyetlerini denetler.
+          </p>
+        </article>
+      </section>
+
+      <!-- 3. Bölüm: Hitap Sistemi -->
+      <section id="hitap" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Hitap Sistemi</h3>
+        <p>
+          Bu hitap sistemi, Akademi Lojistik Komutanlığı içerisinde
+          <strong>disiplinli ve saygılı bir iletişim sağlamak amacıyla</strong> oluşturulmuştur.
+          Personeller konuşurken rütbelere uygun şekilde hitap etmekle yükümlüdür.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="hitap-grid">
+          <div class="hitap-card">
+            <h4>Genel Sorumlu</h4>
+            <p>Akademi Lojistik Komutanlığı içerisindeki en üst yetkili roldür. Tüm rütbeler bu role karşı sorumludur ve verilen talimatlar önceliklidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Genel Sorumlum</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Akademi Lojistik Şefi</h4>
+            <p>Birim içerisindeki en üst yönetici rütbesidir ve lojistik biriminin genel yönetiminden sorumludur.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Şefim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Akademi Lojistik Şef Yardımcısı</h4>
+            <p>Şefe yardımcı olan ve birim düzeninin korunmasından sorumlu rütbedir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Şef Yardımcım</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Denetmeni</h4>
+            <p>Birim içerisindeki denetim görevlerinden sorumlu rütbedir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Denetmenim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Kıdemli Lojistik Personeli</h4>
+            <p>Deneyimli personellerden oluşan rütbedir ve alt rütbeleri denetleme yetkisine sahiptir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Kıdemli Personelim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Personeli</h4>
+            <p>Lojistik görevlerini yerine getiren temel personel rütbesidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Personelim</p>
+          </div>
+
+          <div class="hitap-card">
+            <h4>Lojistik Stajyeri</h4>
+            <p>Birime yeni katılan personellerin bulunduğu başlangıç rütbesidir.</p>
+            <p class="hitap-label">Hitap Şekli</p>
+            <p class="hitap-text">Stajyer</p>
+          </div>
+        </div>
+
+        <p class="hitap-warning">
+          Herkesin uyması zorunludur; aksi takdirde gerekli cezalar uygulanır.
+        </p>
+      </section>
+
+      <!-- 4. Bölüm: Terfi Sistemi -->
+      <section id="terfi" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Terfi Sistemi</h3>
+        <p>
+          <em>Bu sistem Akademi Lojistik Komutanlığı personellerinin yaptığı görevlerden kazandığı puanlara göre terfi etmesini sağlamak amacıyla hazırlanmıştır.</em>
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="terfi-grid">
+          <div class="terfi-card">
+            <h4>Lojistik Stajyeri</h4>
+            <p>Başlangıç rütbesidir. Yeni katılan personeller bu rütbe ile başlar.</p>
+          </div>
+          <div class="terfi-card">
+            <h4>Lojistik Personeli</h4>
+            <p>Gereken Puan: <strong>45</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Kıdemli Lojistik Personeli</h4>
+            <p>Gereken Puan: <strong>100</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Lojistik Denetmeni</h4>
+            <p>Gereken Puan: <strong>150</strong></p>
+          </div>
+          <div class="terfi-card">
+            <h4>Akademi Lojistik Şef Yardımcısı</h4>
+            <p>Yönetim tarafından verilen yetkili rütbedir.</p>
+          </div>
+          <div class="terfi-card">
+            <h4>Akademi Lojistik Şefi</h4>
+            <p>Akademi Lojistik Komutanlığının en üst sorumlusudur.</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>Terfi Şartları</h3>
+        <ul class="custom-list">
+          <li>Gerekli puanı tamamlaması</li>
+          <li>Aktif görev yapması</li>
+          <li>Disiplin cezası almamış olması</li>
+          <li>Yetkililer tarafından uygun görülmesi</li>
+        </ul>
+      </section>
+
+      <!-- 5. Bölüm: Puan Sistemi -->
+      <section id="puan" class="content-section">
+        <h2>AKADEMİ LOJİSTİK KOMUTANLIĞI</h2>
+        <h3>Görev Puan Sistemi</h3>
+        <p>
+          <em>Bu sistem Akademi Lojistik Komutanlığı personellerinin yaptığı görevleri puanlandırmak amacıyla hazırlanmıştır. Görevlerin zorluk derecesine göre puan verilir.</em>
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="puan-grid">
+          <div class="puan-card"><h4>Personel Sayımı Yapmak</h4><p>Puan: <strong>3</strong></p></div>
+          <div class="puan-card"><h4>İnaktif Personel Tespit Etmek</h4><p>Puan: <strong>4</strong></p></div>
+          <div class="puan-card"><h4>İnaktif Personelleri Raporlamak</h4><p>Puan: <strong>4</strong></p></div>
+          <div class="puan-card"><h4>Discord Genel Sayımı Yapmak</h4><p>Puan: <strong>3</strong></p></div>
+          <div class="puan-card"><h4>Akademi Personel Düzenini Denetlemek</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Akademi Eğitimlerini Denetlemek</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Akademi İç Sistem ve Kanal Kontrolleri Yapmak</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Akademi Alımlarını Denetlemek</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Alım Kitapçığı Güncellemek / Sistem Düzenlemek</h4><p>Puan: <strong>7</strong></p></div>
+          <div class="puan-card"><h4>Haftalık Akademi İcraat Raporu Hazırlamak</h4><p>Puan: <strong>6</strong></p></div>
+          <div class="puan-card"><h4>Akademi Hatalarını Tespit Edip Raporlamak</h4><p>Puan: <strong>5</strong></p></div>
+          <div class="puan-card"><h4>Öneri Kanallarını İncelemek ve Raporlamak</h4><p>Puan: <strong>4</strong></p></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>Günlük Aktiflik Puanı</h3>
+        <p>
+          <em>Personellerin aktifliğini ölçmek amacıyla ek puan sistemi uygulanır.</em>
+        </p>
+
+        <ul class="custom-list">
+          <li>Günlük aktif olmak (Discord / görev takibi) — Puan: <strong>2</strong></li>
+          <li>Gün içerisinde en az 1 görev yapmak — Ek Puan: <strong>+1</strong></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>BTF | Turkish Armed Forces - Akademi Lojistik Komutanlığı</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+>>>>>>> 5a0d006ac7e531bfb5fe602058fb738262931cb9

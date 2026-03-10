@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 *,
 *::before,
 *::after {
@@ -801,3 +800,34 @@ a {
 }
 
 >>>>>>> 5a0d006ac7e531bfb5fe602058fb738262931cb9
+ight: 130px;
+  }
+}
+
+@media (max-width: 500px) {
+  .content-section {
+    padding: 1.4rem 1.1rem 1.8rem;
+  }
+
+  .content-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .content-section h3 {
+    font-size: 1.05rem;
+  }
+
+  .logo-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .site-title-animated {
+    font-size: 0.75rem;
+  }
+
+  .main-nav {
+    font-size: 0.85rem;
+  }
+}
+

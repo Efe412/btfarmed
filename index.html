@@ -11,11 +11,52 @@
   <div class="intro-overlay">
     <div class="intro-content">
       <img
+        id="userAvatar"
         src="https://cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?size=512"
-        alt="BTF Logo"
+        alt="User Avatar"
         class="intro-logo"
       />
-      <h1 class="intro-title">BTF | Turkish Armed Forces</h1>
+      <h1 id="userName" class="intro-title">BTF | Turkish Armed Forces</h1>
+    </div>
+  </div>
+
+  <!-- Kod Doğrulama Modalı -->
+  <div class="code-modal-overlay" id="codeModalOverlay">
+    <div class="code-modal">
+      <div class="code-modal-header">
+        <img
+          src="https://cdn.discordapp.com/icons/932673463561363587/8a9e85b22bdd7c20c2133be18f90c0a0.webp?size=512"
+          alt="BTF Logo"
+          class="code-modal-logo"
+        />
+        <h2>Sayfa Erişim Kodu</h2>
+        <p class="modal-subtitle">Lütfen Discord botundan aldığınız kodu girin</p>
+      </div>
+
+      <form class="code-form" id="codeForm">
+        <div class="code-input-wrapper">
+          <input
+            type="password"
+            id="codeInput"
+            class="code-input"
+            placeholder="• • • • •"
+            maxlength="6"
+            autocomplete="off"
+          />
+          <button type="button" class="toggle-code-visibility" id="toggleVisibility">
+            <span class="eye-icon">👁️</span>
+          </button>
+        </div>
+        <button type="submit" class="code-submit-btn">Erişim Sağla</button>
+      </form>
+
+      <div class="code-error" id="codeError" style="display: none;">
+        <p>Geçersiz kod. Lütfen Discord botundan yeni kod alın.</p>
+      </div>
+
+      <div class="code-info">
+        <p>Discord sunucumuzda <strong>/kod</strong> komutunu kullanarak bir erişim kodu alabilirsiniz.</p>
+      </div>
     </div>
   </div>
 
@@ -30,7 +71,7 @@
         <div class="site-title-animated" id="animatedTitle"></div>
       </div>
       <nav class="main-nav">
-        <a href="#lojistik">Lojistik Hakkında</a>
+        <a href="lojistik.html">Lojistik Hakkında</a>
         <a href="#roller">Rütbe Tanıtımları</a>
         <a href="#hitap">Hitap Sistemi</a>
         <a href="#terfi">Terfi Sistemi</a>
